@@ -165,14 +165,13 @@ function Header() {
 
         <nav className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              activeProps={{ className: "text-rose-deep font-semibold" }}
+            <a
+              key={link.href}
+              href={link.href}
               className="text-sm font-medium text-foreground/80 transition-colors hover:text-rose-deep"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
           <a
             href={site.whatsapp.url}
@@ -199,15 +198,14 @@ function Header() {
         <nav className="border-t border-border bg-background px-4 pb-6 pt-2 lg:hidden">
           <div className="flex flex-col">
             {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
+              <a
+                key={link.href}
+                href={link.href}
                 onClick={() => setOpen(false)}
-                activeProps={{ className: "text-rose-deep font-semibold" }}
                 className="rounded-lg px-3 py-3 text-base font-medium text-foreground/90 transition-colors hover:bg-accent"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
             <a
               href={site.whatsapp.url}
