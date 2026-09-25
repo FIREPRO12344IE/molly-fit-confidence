@@ -62,7 +62,7 @@ export const outlinePill =
   "inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-7 py-3.5 text-sm font-semibold text-foreground transition duration-300 hover:-translate-y-0.5 hover:border-rose-deep hover:text-rose-deep";
 
 export const inputCls =
-  "w-full rounded-2xl border border-input bg-card px-4 py-3 text-base text-foreground outline-none transition placeholder:text-muted-foreground/70 focus:border-rose-deep focus:ring-2 focus:ring-rose-deep/25";
+  "w-full rounded-2xl border border-input bg-card px-4 py-3 text-base text-foreground outline-none transition placeholder:text-muted-foreground focus:border-rose-deep focus:ring-2 focus:ring-rose-deep/25";
 
 /** Kettlebell line-mark used with the MR COACHING wordmark, per the flyer. */
 export function KettlebellMark({ className }: { className?: string }) {

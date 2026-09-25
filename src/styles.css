@@ -41,7 +41,8 @@
   --color-rose-deep: var(--rose-deep);
   --color-cream-deep: var(--cream-deep);
   --font-display: "Fraunces", Georgia, serif;
-  --font-body: "Karla", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Karla", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
 }
 
 :root {

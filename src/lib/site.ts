@@ -171,6 +171,21 @@ export const contact = {
   eyebrow: "Contact me! 🙌",
   heading: "Ready to Get Started?",
   text: "Whether you're new to the gym, getting back into training or working towards a specific fitness goal, get in touch and let's chat.",
+  nextStepsTitle: "What happens next",
+  nextSteps: [
+    {
+      title: "You send your enquiry",
+      body: "Use the form or message me directly — whichever is easier for you.",
+    },
+    {
+      title: "We have a chat",
+      body: "I'll answer your questions and learn what you're working towards.",
+    },
+    {
+      title: "You try a session",
+      body: "We find a time that suits you and get started with something that fits you.",
+    },
+  ],
 };
 
 export const trainingExperienceOptions = [

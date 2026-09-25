@@ -234,6 +234,27 @@ export function Contact({
               </dd>
             </div>
           </dl>
+
+          <div className="mt-9">
+            <p className="font-display text-lg font-semibold text-foreground">
+              {contact.nextStepsTitle}
+            </p>
+            <ol className="mt-5 space-y-4">
+              {contact.nextSteps.map((step, i) => (
+                <li key={step.title} className="flex gap-3">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-secondary text-sm font-semibold text-secondary-foreground">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-semibold text-foreground">{step.title}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                      {step.body}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
         </Reveal>
 
         <Reveal delay={120}>
