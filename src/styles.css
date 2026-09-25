@@ -41,7 +41,8 @@
   --color-rose-deep: var(--rose-deep);
   --color-cream-deep: var(--cream-deep);
   --font-display: "Fraunces", Georgia, serif;
-  --font-body: "Karla", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Karla", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
 }
 
 :root {
@@ -93,6 +94,15 @@
   --blush: oklch(0.32 0.04 25);
   --rose-deep: oklch(0.78 0.09 20);
   --cream-deep: oklch(0.28 0.02 40);
+}
+
+/* Soft rose-tinted shadows used across cards and buttons. */
+@utility shadow-soft {
+  box-shadow: 0 24px 60px -30px oklch(0.47 0.11 15 / 0.28);
+}
+
+@utility shadow-lift {
+  box-shadow: 0 32px 70px -28px oklch(0.47 0.11 15 / 0.35);
 }
 
 @layer base {

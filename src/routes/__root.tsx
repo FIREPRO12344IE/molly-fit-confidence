@@ -13,6 +13,7 @@ import { Menu, X, Instagram, MessageCircle } from "lucide-react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { site, navLinks } from "@/lib/site";
+import { Wordmark } from "@/components/home/shared";
 import { cn } from "@/lib/utils";
 
 function NotFoundComponent() {
@@ -154,25 +155,19 @@ function Header() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 md:h-20">
-        <Link to="/" className="flex items-baseline gap-1" onClick={() => setOpen(false)}>
-          <span className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-            MR
-          </span>
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-deep sm:text-base">
-            Coaching
-          </span>
+        <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
+          <Wordmark />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              activeProps={{ className: "text-rose-deep font-semibold" }}
+            <a
+              key={link.href}
+              href={link.href}
               className="text-sm font-medium text-foreground/80 transition-colors hover:text-rose-deep"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
           <a
             href={site.whatsapp.url}
@@ -199,15 +194,14 @@ function Header() {
         <nav className="border-t border-border bg-background px-4 pb-6 pt-2 lg:hidden">
           <div className="flex flex-col">
             {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
+              <a
+                key={link.href}
+                href={link.href}
                 onClick={() => setOpen(false)}
-                activeProps={{ className: "text-rose-deep font-semibold" }}
                 className="rounded-lg px-3 py-3 text-base font-medium text-foreground/90 transition-colors hover:bg-accent"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
             <a
               href={site.whatsapp.url}
@@ -231,9 +225,7 @@ function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
         <div className="flex flex-col items-center gap-8 text-center md:flex-row md:items-start md:justify-between md:text-left">
           <div>
-            <p className="font-display text-2xl font-semibold text-foreground">
-              MR <span className="text-rose-deep">Coaching</span>
-            </p>
+            <Wordmark />
             <p className="mt-2 text-sm text-muted-foreground italic">
               "{site.tagline}"
             </p>

@@ -1,23 +1,53 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { About } from "@/components/home/About";
+import { Contact } from "@/components/home/Contact";
+import { Hero } from "@/components/home/Hero";
+import { Services } from "@/components/home/Services";
+import { Testimonials } from "@/components/home/Testimonials";
+import { WhoIGuide } from "@/components/home/WhoIGuide";
+import { WhyMRCoaching } from "@/components/home/WhyMRCoaching";
+
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "MR Coaching — Supportive Personal Training with Molly" },
+      {
+        name: "description",
+        content:
+          "Build confidence, get stronger and feel better with supportive, structured personal training from Molly. Beginner-friendly 1-1 PT sessions, monthly coaching packages and train-with-a-friend options.",
+      },
+      {
+        property: "og:title",
+        content: "MR Coaching — Supportive Personal Training with Molly",
+      },
+      {
+        property: "og:description",
+        content:
+          "Supportive, structured personal training to help you become stronger, fitter and more confident — inside and outside the gym.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: HomePage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function HomePage() {
+  const [coachingType, setCoachingType] = useState("");
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
+    <div id="top">
+      <Hero />
+      <About />
+      <WhoIGuide />
+      <Services onChoose={setCoachingType} />
+      <WhyMRCoaching />
+      <Testimonials />
+      <Contact
+        coachingType={coachingType}
+        onCoachingTypeChange={setCoachingType}
       />
     </div>
   );
