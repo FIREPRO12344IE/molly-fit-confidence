@@ -57,7 +57,7 @@ function Field({
 }: {
   label: string;
   htmlFor: string;
-  error?: string;
+  error?: string | undefined;
   className?: string;
   children: ReactNode;
 }) {
