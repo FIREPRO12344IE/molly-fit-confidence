@@ -172,7 +172,7 @@ export function Contact({
   return (
     <Section id="contact" className="border-t border-border/60">
       <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-        <Reveal>
+        <Reveal className="lg:sticky lg:top-28 lg:self-start">
           <Eyebrow>{contact.eyebrow}</Eyebrow>
           <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-foreground text-balance sm:text-4xl">
             {contact.heading}
@@ -274,12 +274,12 @@ export function Contact({
                       setErrors({});
                       setSentText(null);
                     }}
-                    className="inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-rose-deep"
+                    className="inline-flex items-center rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-rose-deep hover:text-rose-deep"
                   >
                     {form.success.reset}
                   </button>
                 </div>
-                <pre className="mt-6 max-h-44 overflow-auto whitespace-pre-wrap rounded-2xl bg-secondary/60 p-4 text-left text-xs leading-relaxed text-muted-foreground">
+                <pre className="mt-6 max-h-80 overflow-auto whitespace-pre-wrap rounded-2xl bg-secondary/60 p-4 text-left text-xs leading-relaxed text-muted-foreground">
                   {sentText}
                 </pre>
               </div>
