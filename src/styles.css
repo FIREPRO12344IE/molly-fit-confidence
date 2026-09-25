@@ -95,6 +95,15 @@
   --cream-deep: oklch(0.28 0.02 40);
 }
 
+/* Soft rose-tinted shadows used across cards and buttons. */
+@utility shadow-soft {
+  box-shadow: 0 24px 60px -30px oklch(0.47 0.11 15 / 0.28);
+}
+
+@utility shadow-lift {
+  box-shadow: 0 32px 70px -28px oklch(0.47 0.11 15 / 0.35);
+}
+
 @layer base {
   * {
     border-color: var(--color-border);

@@ -79,6 +79,12 @@ export const audiences = [
   },
 ] as const;
 
+export const servicesSection = {
+  eyebrow: "How I Can Help",
+  heading: "Services",
+  text: "Message Molly if you're not sure which option suits you best — there's no pressure to decide now.",
+};
+
 /*
  * `coachingType` must match an entry in coachingTypeOptions below — that is what
  * pre-fills the enquiry form when someone clicks a service button.
