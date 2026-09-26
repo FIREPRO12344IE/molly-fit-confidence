@@ -14,8 +14,8 @@ export const site = {
     url: "https://instagram.com/mollyrhysfit",
   },
   whatsapp: {
-    display: "07368 363663",
-    url: "https://wa.me/447368363663",
+    display: "07868863668",
+    url: "https://wa.me/447868863668",
   },
 };
 
