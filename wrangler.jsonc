@@ -1,0 +1,13 @@
+// Cloudflare Workers config for MR Coaching (TanStack Start / Nitro cloudflare-module output).
+// Deploy with: npm run build && npm run deploy  (or `npx wrangler deploy`)
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mr-coaching",
+  "main": "dist/server/index.mjs",
+  "compatibility_date": "2026-09-15",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS"
+  }
+}
