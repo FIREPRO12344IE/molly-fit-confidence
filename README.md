@@ -44,5 +44,5 @@ First deploy asks you to log in (`wrangler login`) or uses the `CLOUDFLARE_API_T
 1. Create an API token in the Cloudflare dashboard with "Edit Cloudflare Workers" permission.
 2. Store it as the `CLOUDFLARE_API_TOKEN` secret, then run `npm run deploy` in your workflow.
 
-Netlify static hosting remains supported via `netlify.toml` / `public/_redirects` (static `dist`-style builds), but the full SSR app deploys as a Cloudflare Worker.
+Cloudflare Workers is the only deploy target (`wrangler.jsonc` + `npm run deploy`); the app serves as a full Cloudflare Worker with SSR.
 
