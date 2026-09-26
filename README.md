@@ -27,3 +27,22 @@ npm run dev
 - TypeScript
 - React
 - Tailwind CSS
+
+## Deploying to Cloudflare
+
+The site runs as a Cloudflare Worker (Nitro `cloudflare-module` preset). Config lives in `wrangler.jsonc`.
+
+```sh
+npm run deploy            # build + deploy to Cloudflare Workers
+npm run preview:cloudflare  # run the built site on Cloudflare's local runtime
+```
+
+First deploy asks you to log in (`wrangler login`) or uses the `CLOUDFLARE_API_TOKEN` environment variable in CI.
+
+### Deploying from CI (e.g. GitHub Actions)
+
+1. Create an API token in the Cloudflare dashboard with "Edit Cloudflare Workers" permission.
+2. Store it as the `CLOUDFLARE_API_TOKEN` secret, then run `npm run deploy` in your workflow.
+
+Netlify static hosting remains supported via `netlify.toml` / `public/_redirects` (static `dist`-style builds), but the full SSR app deploys as a Cloudflare Worker.
+
